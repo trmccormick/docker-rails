@@ -1,7 +1,7 @@
 FROM phusion/baseimage:0.9.19
 
-ENV RUBY_MAJOR "2.3"
-ENV RUBY_VERSION "2.3.1"
+ENV RUBY_MAJOR "2.4"
+ENV RUBY_VERSION "2.4.0"
 ENV RUBYGEMS_VERSION "2.6.10"
 ENV BUNDLER_VERSION "1.14.2"
 ENV NODE_VERSION "6.9.4"
@@ -29,8 +29,7 @@ RUN curl -o ruby.tgz \
   cd ruby-${RUBY_VERSION} && \
   ./configure --enable-shared --with-jemalloc --disable-install-doc && \
   make -j4 && \
-  make install && \
-  rm /usr/local/lib/libruby-static.a
+  make install
 
 ENV GEM_SPEC_CACHE "/tmp/gemspec"
 RUN echo 'gem: --no-document' > $HOME/.gemrc

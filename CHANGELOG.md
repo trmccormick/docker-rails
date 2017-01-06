@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+- Upgrade to Ruby 2.4
+
 ## 2.6.0 (2017-01-26)
 
 - Upgrade rubygems
